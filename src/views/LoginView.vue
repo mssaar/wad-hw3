@@ -1,7 +1,31 @@
 <template>
   <div class="login">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="See tekst on defineeritud helloworldis, aga sisu loodud LoginView's"/>
+    <section class="section">
+        <h1> <strong> Tervetuloa Postamaan </strong> </h1> <!-- H1 pealkiri; strong on boldis -->
+        <div class="create_or_log">
+            <a href="https://en.wikipedia.org/wiki/Wikipedia:Why_create_an_account%3F" target="_blank" >Luo tili</a> <!-- kui target pole blank, siis avab lahtiolevas tabis -->
+                <p>tai</p>
+                <p>Ole hyvä ja kirjaudu sisään</p>
+        </div>
+
+        <form id="loginForm" action="index.html" method="get">  <!-- läheb index.html lehele, kui mõlemad väljad on täidetud -->
+            <ul>
+                <li> <input id="email" type="email" placeholder="Sähköposti" required> </li> <!-- placeholder disappears when typing starts. Kui type on õige, siis nõuab õiget formaati -->
+                <li> <input id="password" type="password" placeholder="Salasana" required> </li> <!--  type=password ei näita kui kirjutad: Required ütleb, et väli peab olema täidetud-->
+                <li class="button"> 
+                  <button id="loginButton" type="submit" >Kirjaudu sisään</button> </li>
+            </ul>
+        </form >
+
+        <div>  <!-- Kas unustasid salasõna? -->
+            <a href="https://moodymusings.com/i-forgot-my-password-and-other-excuses-for-your-incompetence/" target="_blank" >Salasana unohtunut</a> <!-- kui target pole blank, siis avab lahtiolevas tabis -->
+        </div>
+        <div>
+
+        </div>
+    </section>
+
   </div>
 </template>
 
@@ -16,3 +40,205 @@ export default {
   }
 }
 </script>
+
+<style>
+/* SHORTCUTS
+Comment: Ctrl + K C 
+Liiguta rida: Alt + Nool 
+Kopeeri rida: Shft + Alt + Nool
+ */
+ * {
+    font-family: sans-serif;
+    text-decoration: none; /* Remove underline from links */
+    box-sizing: border-box; /*The box-sizing CSS property sets how the total width and height of an element are calculated. Border-box: padding, and border are included in the width and height:*/
+  }
+
+.nav { /* CLASS'i järgi */
+    padding:0.5%; /* Paneb navbar'i elemendid kasti ülalt-alt äärest natuke kaugemale */
+    display: flex; /* Turns the container into a flexbox. */
+    justify-content: space-between; /* Pushes first and last items to opposite sides */
+    align-items: center; /* Centers items vertically */
+    background-color: #007BFF; /* Background color for the nav bar */
+    border: 1px solid #646174; /*  border of the navbar*/
+    border-radius: 5px; /*  rounded corners */
+}
+
+.nav a {
+    color: #fff; /* Set link color */
+    margin-left: 10px;
+    font-size: 30px; /* teksti suurus */
+}
+.kotiEma{
+    display: flex;
+    
+}
+
+.koti-link:hover { /* PSEUDO-classi järgi */
+    background-color: #000; /* Hover effect only for the Koti link */
+}
+
+
+body > * { /*See, kus on navbar ja login kast  */
+    margin-bottom: 20px; /* Lisab 20px vahe igale elemendile */
+}
+
+
+.section { /* See, kus on login värk */
+    padding-bottom: 19px; /* Tekst on kastis altäärest natuke eemal */
+    margin-top: 5%;
+    text-align: center;
+
+    background-color: #ededed;
+    border: 1px solid #646174;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75); /*  kasti vari */
+    width: 50%;  /* Teeb kasti kitsamaks */
+    margin: auto; /* Paneb kasti keskele */
+}
+
+@media (max-width: 800px) { /*Kui on telo, siis ...*/
+    .section,
+    .post { 
+        width: 270px;/*...sisselogimise kast ja postituse kast laiemaks*/
+    }
+    .postPic{
+        width: 210px;  /* Postituse pilt kitsamaks */
+    }
+}
+
+.create_or_log a ~ p{/* Kõik tekstid, mis on creatorlog lapsed ja tulevad pärast a'd */
+    margin: 8px;
+}
+
+.section a{/* Descendant järgi e järeltulija järgi. Kõik sectionis, mis on hyperlingis */
+    color: #56a1d6;
+}
+
+a + p {/* Tekst pärast hyperlinki */
+    font-style: italic;
+}
+
+ul{
+    margin: 0;
+    padding: 0; /* lugemine hakkab nullist ehk siis on keskel */
+}
+
+ul > li { /*CHILD'i järgi.  Unititled listi itemid ehk kirjutamiskastid */
+    padding: 5px; /* Sisemised vahed */
+    list-style: none; /*: none = pole palle nimekirja elementidel    */
+}
+#email, #password { /* ID järgi */
+        width: 150px;  /*  wider */
+        height: 30px;  /*  shorter in height */
+        margin: auto;
+}
+
+button {
+    padding: 10px 20px;/* paneb kasti sees oleva teksti äärtest kaugemale ehk kokkuvõttes läheb nupp suuremaks */
+    background-color: #007BFF;
+    color: white; /* teksti värv */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;/* kursor muutub sõrmeks, kui on peal */
+    font-size: 16px;
+}
+
+/* ADDPOST jaoks */
+.section #addPost_div{
+    display: flex; /* Turns the container into a flexbox. */
+    align-items: center; /* Centers items vertically */
+}
+
+.section div #addPost_text{ /* classis section, classis div, id'ga addPost_text ehk Tekst enne nuppu */
+    margin: 19px;
+}
+
+#post_body{/* Postituse kirjutamise kast */
+    padding: 10px 5px;/* paneb kasti sees oleva teksti äärtest kaugemale ehk kokkuvõttes läheb nupp suuremaks. 1.nr on üleval ja numbrid liiguvad kellaosuti suunas */
+    margin: 8px 10px;
+}
+
+.file_button{ /* classis section, classis div, id'ga file, mis on failivalimise nupp */
+    color: #fff;
+    background-color: #41668d;
+    border-radius: 5px;
+    border: #000;
+    padding: 4px 10px;/* paneb kasti sees oleva teksti äärtest kaugemale ehk kokkuvõttes läheb nupp suuremaks */
+    cursor: pointer;/* kursor muutub sõrmeks, kui on peal */
+}
+
+/* SEE TAB, KUS ON POSTITUSED */
+section{
+    padding: 10px 25px;
+    margin: 10px;
+    display: block;
+    background-color: #366e52;
+    border-radius: 15px;
+    width: 50%;  /* Teeb kasti kitsamaks */
+    margin: auto; /* Paneb kasti keskele */
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+.kuupaevJaPilt{
+    display: flex; /* Turns the container into a flexbox. */
+    justify-content: space-between; /* Pushes first and last items to opposite sides */
+    align-items: center; /* Centers items vertically */
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+.post_picture img {
+    width: 60%; /* Set the width as a percentage of the parent element */
+}
+
+/* Dropdown asjad */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown img {
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    border-radius: 5px;
+    background-color: #016ee3;
+    min-width: 200px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a {
+    font-size: 15px;
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+    margin: auto;
+}
+.dropdown-content a:hover {
+    border-radius: 5px;
+    background-color: #375781;
+    margin: auto;
+}
+
+.show {
+    display: block;
+}
+
+#final{
+    color: #fff;
+    background-color: #8d4141;
+    border-radius: 50px;
+    border: #000;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+</style>
