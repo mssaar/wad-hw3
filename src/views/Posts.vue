@@ -2,7 +2,6 @@
 <template>
   <div id="posts">
       <main>
-          <h1>Postitukset</h1>
           <button @click="resetLikes"> Nollaa kaikki tykkäykset</button>
           <PostsCompo />
       </main>
