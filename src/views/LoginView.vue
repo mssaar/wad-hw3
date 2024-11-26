@@ -43,11 +43,12 @@ export default {
     handleLogin() {
         var pass = document.getElementById("password").value.split(""); //Passwordi iga täht on arrays üks element
         var errors = [];
+        const upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Ü", "Õ", "Ö", "Ä", "Ž", "Š"]
         console.log(pass);
         const lowercaseCount = pass.filter(element => typeof element === 'string' && element >= 'a' && element <= 'z').length;
 
         if (! pass.includes("_")){ errors.push("Salasanan tulee sisältää merkki '_'") }
-        if (! pass[0] === pass[0].toUpperCase() && /^[A-Z]$/.test(pass[0]) ) { errors.push("Salasanan tulee alkaa isoilla aakkosilla") } //Algab suure tähega
+        if (! upperCaseLetters.includes(pass[0]) ) { errors.push("Salasanan tulee alkaa isoilla aakkosilla") } //Algab suure tähega
         if (!pass.some(element => !isNaN(element))) { errors.push("Salasanan tulee sisältää vähintään yksi numeerinen arvo") } //Sisaldab numbrit
         if (lowercaseCount < 2) { errors.push("Salasanassa tulee olla vähintään kaksi pientä aakkosmerkkiä") }
         if (pass.length < 8 || pass.length > 14) { errors.push("Salasanan tulee olla vähintään 8 merkkiä pitkä ja alle 15 merkkiä pitkä") }
