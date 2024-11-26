@@ -55,32 +55,32 @@ export default createStore({
             {
                 id: 7,
                 like: 33,
-                image: "https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/465024790_957730083048579_4427690051733980024_n.jpg",
-                content: "Might call later",
+                image: "https://i.pinimg.com/736x/c1/84/15/c1841505291373a1efaaaba05462d455.jpg",
+                content: "eile",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "12.10.2008"
             },
             {
                 id: 8,
                 like: 5,
-                image: "https://scontent.ftll2-1.fna.fbcdn.net/v/t39.30808-6/464323300_498909039807098_5101012980119738836_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PB9SADUH9-UQ7kNvgFIZyJP&_nc_zt=23&_nc_ht=scontent.ftll2-1.fna&_nc_gid=A4-b3RJ1Ep8bCmxzF1ssFCg&oh=00_AYCWE0XHtS9JjtSXEMU-30CK-Jxqs_QemvOLileMU04VSg&oe=6727C5A2",
-                content: "Armastan oma naist",
+                image: "https://t4.ftcdn.net/jpg/06/45/27/81/360_F_645278147_orAd7BZzFeVzJu1hr14wHj7FPxHmQoMw.jpg",
+                content: "crew'ga sai kõikides liivakastides käidud",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "09.06.2023"
             },
             {
                 id: 9,
                 like: 1,
-                image: "https://scontent.ftll2-1.fna.fbcdn.net/v/t39.30808-6/463676956_10160892597732284_6556841479839573782_n.jpg?stp=dst-jpg_p526x296&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=LwuL2vlokukQ7kNvgEyZ8bh&_nc_zt=23&_nc_ht=scontent.ftll2-1.fna&_nc_gid=AjhcsyWptLHxb4YQiZJQECQ&oh=00_AYA4HaxPKrqE2JbNsfgB6N2ZFlft2IVgOO7Pu62SmPnIEg&oe=6727B84A",
-                content: "Sitapildur",
+                image: "https://images.squarespace-cdn.com/content/v1/509d7c06e4b081ffff71ad54/1630506639252-WEMRGTRN7Y50YK5DO5KN/fishing-6-1.jpg",
+                content: "onu Tiiduga",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "28.02.2004"
             },
             {
                 id: 10,
                 like: 11,
-                image: "https://scontent.ftll2-1.fna.fbcdn.net/v/t39.30808-6/462713458_1165059075330837_5775663572925675202_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9GXeAf601I4Q7kNvgExB4s3&_nc_zt=23&_nc_ht=scontent.ftll2-1.fna&_nc_gid=AjhcsyWptLHxb4YQiZJQECQ&oh=00_AYC247ayY7tG4ARx-fhZ8co4_zw05Yu1Lm0FPt1zsUMZrQ&oe=6727CFCD",
-                content: "Kulda kohe kapaga",
+                image: "https://www.letseatcake.com/wp-content/uploads/2021/07/Funny-Memes-44.jpg",
+                content: "iga saatana kord",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "26.06.2002"
             },
