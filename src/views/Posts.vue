@@ -2,9 +2,8 @@
 <template>
   <div id="posts">
       <main>
-          <h1>Postitused</h1>
-          <p>This is the posts page. You can add post-specific content here.</p>
-          <button @click="resetLikes">Reset All Likes</button>
+          <h1>Postitukset</h1>
+          <button @click="resetLikes"> Nollaa kaikki tykkäykset</button>
           <PostsCompo />
       </main>
     </div>
