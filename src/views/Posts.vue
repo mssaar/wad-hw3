@@ -1,34 +1,32 @@
+
 <template>
-    <div class="posts">
-      <h1>Postitused</h1>
-      <p>This is the posts page. You can add post-specific content here.</p>
-      <posts-compo/>
+  <div id="posts">
+      <main>
+          <h1>Postitused</h1>
+          <p>This is the posts page. You can add post-specific content here.</p>
+          <button @click="resetLikes">Reset All Likes</button>
+          <PostsCompo />
+      </main>
     </div>
   </template>
   
   <script>
-import PostsCompo from '@/components/PostsCompo.vue';
+  import Header from "@/components/Header.vue";
+  import Footer from "@/components/Footer.vue";
+  import PostsCompo from "@/components/PostsCompo.vue";
+  
   export default {
-    name: "Posts",
-    components: {PostsCompo},
-    methods: {
-IncreasePrice: function() {
-    /*
-    When using the struct mode in the vuex store, we cannot mutate state outside mutation handlers.
-    Therefore, using the following function will produce an error
-    
-    this.$store.state.productList.forEach(product => {
-        product.price += 1;
-        }) 
-    */
-//this.$store.commit("IncreasePrice") // mutations
-this.$store.dispatch("IncreasePriceAct")
-},
-DecreasePrice: function() {
-// this.$store.commit("DecreasePrice")  // mutations
-this.$store.dispatch("DecreasePriceAct")
-}}
-
+      name: "Posts",
+      components: {
+          Header,
+          Footer,
+          PostsCompo,
+      },
+      methods: {
+          resetLikes() {
+              this.$store.dispatch('resetLikesAction');
+          }
+      }
   };
   </script>
   
@@ -40,6 +38,15 @@ this.$store.dispatch("DecreasePriceAct")
   
   h1 {
     color: #333;
+  }
+  button {
+    background-color: #c21010;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
   }
   </style>
   

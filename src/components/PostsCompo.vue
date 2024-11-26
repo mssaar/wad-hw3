@@ -1,63 +1,95 @@
 <template>
-    <div id= "comp-list-two">
-    <h1> Book list two</h1>
-    <!-- <p class="item" v-for="product in productList" :key="product.id"> -->
-    <p  class="item" v-for = "product in productListsale" :key="product.id">   
-    <span class="author"> <b>Author:</b> {{product.author}} </span>
-    <span class="book"> <b>Book:</b> {{product.book}} </span> <br>
-    <span class="goodreads"> <b>Goodreads:</b> {{product.goodreads}} </span>
-    <span class="price"> Price: € {{product.price}} </span> 
-    </p>
+    <div id="post-list">
+        <h1>Post list</h1>
+        <div v-for="post in posts" :key="post.id" class="post">
+            <div class="post-header">
+                <img :src="post.author_pic" alt="author" class="author-pic" />
+                <p>{{ post.created_time }}</p>
+            </div>
+            <div class="post-body">
+                <img v-if="post.image" :src="post.image" alt="Post Image" class="post-image" />
+                <p>{{ post.content }}</p>
+            </div>
+            <div class="post-footer">
+                <div class="like-button" @click="increaseLike(post.id)">
+                    <img src="https://cdn.worldvectorlogo.com/logos/facebook-like.svg" alt="Like" class="like-image" />
+                    <span>{{ post.like }} Likes</span>
+                </div>
+            </div>
+        </div>
     </div>
-    </template>
-    
-    
-    <script>
-    export default {
-        name: "PostsCompo",
-        data: function() {
-    return {
-    }},
+</template>
+
+<script>
+export default {
+    name: "PostsCompo",
     computed: {
-    productList(){
-    return this.$store.state.productList
+        posts() {
+            return this.$store.getters.allPosts;
+        }
     },
-    productListsale(){
-    return this.$store.getters.productListsale
-    },
-    
-    
+    methods: {
+        increaseLike(postId) {
+            this.$store.dispatch('increaseLikeAction', postId);
+        }
     }
-    }
-    </script>
-    
-    <style scoped>
-    .item{
-    background: rgb(128, 183, 235);
-    margin-bottom: 5px;
-    padding: 3px 5px;}
-    #comp-list-two{
-    background: #1862c9;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-    padding: 10px 20px;
-    }
-    #comp-list-two ul{
-    padding: 0;
-    list-style-type: none;
-    }
-    #comp-list-two li{
+};
+</script>
+
+<style scoped>
+#post-list {
+    margin: 20px;
+}
+
+.post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.author-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
-    margin-top: 10px;
-    padding: 20px;
-    background: rgba(255,255,255,0.7);
-    }
-    .price{
-    font-weight: bold;
-    color: #860CE8;
-    display: block;
-    }
-    span{
-    margin-right: 10px;
-    }
-    </style>
+}
+
+.post-body {
+    margin: 10px 0;
+}
+
+.post-image {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.like-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.like-button:hover .like-image {
+    opacity: 0.8;
+}
+</style>
