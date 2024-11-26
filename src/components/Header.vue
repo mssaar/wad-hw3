@@ -17,9 +17,12 @@
   
   <style scoped>
   .site-header {
+    width: 100%;
+    position: fixed;
     background-color: #333;
     color: white;
     padding: 10px 20px;
+    top:0%
   }
   
   .site-header ul {
