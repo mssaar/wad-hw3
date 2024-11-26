@@ -9,10 +9,11 @@
                 <p>Ole hyvä ja kirjaudu sisään</p>
         </div>
 
-        <form id="loginForm" action="index.html" method="get">  <!-- läheb index.html lehele, kui mõlemad väljad on täidetud -->
+        <form id="loginForm" @submit.prevent="handleLogin">  <!-- läheb index.html lehele, kui mõlemad väljad on täidetud -->
             <ul>
                 <li> <input id="email" type="email" placeholder="Sähköposti" required> </li> <!-- placeholder disappears when typing starts. Kui type on õige, siis nõuab õiget formaati -->
                 <li> <input id="password" type="password" placeholder="Salasana" required> </li> <!--  type=password ei näita kui kirjutad: Required ütleb, et väli peab olema täidetud-->
+                <div id="errorsDiv"> </div> <!-- Siia tulevad salasõna mittetäidetud nõudmised -->
                 <li class="button"> 
                   <button id="loginButton" type="submit" >Kirjaudu sisään</button> </li>
             </ul>
@@ -37,7 +38,30 @@ export default {
   name: 'LoginView',
   components: {
     Header
-  }
+  },
+  methods: {
+    handleLogin() {
+        var pass = document.getElementById("password").value.split(""); //Passwordi iga täht on arrays üks element
+        var errors = [];
+        console.log(pass);
+        const lowercaseCount = pass.filter(element => typeof element === 'string' && element >= 'a' && element <= 'z').length;
+
+        if (! pass.includes("_")){ errors.push("Salasanan tulee sisältää merkki '_'") }
+        if (! pass[0] === pass[0].toUpperCase() && /^[A-Z]$/.test(pass[0]) ) { errors.push("Salasanan tulee alkaa isoilla aakkosilla") } //Algab suure tähega
+        if (!pass.some(element => !isNaN(element))) { errors.push("Salasanan tulee sisältää vähintään yksi numeerinen arvo") } //Sisaldab numbrit
+        if (lowercaseCount < 2) { errors.push("Salasanassa tulee olla vähintään kaksi pientä aakkosmerkkiä") }
+        if (pass.length < 8 || pass.length > 14) { errors.push("Salasanan tulee olla vähintään 8 merkkiä pitkä ja alle 15 merkkiä pitkä") }
+
+        if (errors.length === 0){ this.$router.push("/posts") }
+        else { 
+            const errorsDiv = document.getElementById('errorsDiv'); //Võtame algse
+            errorsDiv.innerHTML = errors.join('<br>'); //Lisame algsele array elemendid, pannes iga vahele line brake'i
+            errorsDiv.style.color = "red"
+        }
+
+    }
+}
+
 }
 </script>
 
