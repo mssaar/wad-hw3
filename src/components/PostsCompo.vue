@@ -1,6 +1,5 @@
 <template>
     <div id="post-list">
-        <h1>Post list</h1>
         <div v-for="post in posts" :key="post.id" class="post">
             <div class="post-header">
                 <img :src="post.author_pic" alt="author" class="author-pic" />
