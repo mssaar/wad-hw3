@@ -7,7 +7,7 @@ export default createStore({
             {
                 id: 1,
                 like: 0,
-                image: "https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/465024790_957730083048579_4427690051733980024_n.jpg",
+                image: "https://cdn.britannica.com/08/194708-050-56FF816A/potatoes.jpg",
                 content: "kartoffel",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "08.10.2023"
@@ -23,7 +23,7 @@ export default createStore({
             {
                 id: 3,
                 like: 19,
-                image: "https://scontent.ftll2-1.fna.fbcdn.net/v/t39.30808-6/465009299_8759648954078015_7479492291036471472_n.jpg?stp=dst-jpg_p526x296&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TKceibgiL_QQ7kNvgEYewEP&_nc_zt=23&_nc_ht=scontent.ftll2-1.fna&_nc_gid=AmbUozkUbq0lbkz72NyD1vI&oh=00_AYBvcJ4Udsit84gATdIFsfvyIfe0c5lyzg5A8tH6pzAJcg&oe=6727ACE0",
+                image: "https://media2.riemurasia.net/albumit/mmedia/ki/5i4/2iyp/44576/1895621409.jpg",
                 content: "Pommuudis",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "08.10.2023"
@@ -31,7 +31,7 @@ export default createStore({
             {
                 id: 4,
                 like: 9,
-                image: "https://scontent.ftll2-1.fna.fbcdn.net/v/t39.30808-6/464261458_122164553486053854_1874447425570842371_n.jpg?stp=dst-jpg_s640x640&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Y7-czb1nWKsQ7kNvgGb2Djf&_nc_zt=23&_nc_ht=scontent.ftll2-1.fna&_nc_gid=A4-b3RJ1Ep8bCmxzF1ssFCg&oh=00_AYB-6Cgd9uzen5ct6-sg9_Ru3Q79tUzZTcLvZTlHFXRzkw&oe=6727C39E",
+                image: "https://i.redd.it/5az9x67eedx41.jpg",
                 content: "ZAik",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "03.03.2023"
@@ -39,7 +39,7 @@ export default createStore({
             {
                 id: 5,
                 like: 3,
-                image: "https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-6/465024790_957730083048579_4427690051733980024_n.jpg",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8GBxzohPMW294Tce5ADZVuQf97KhKYs1psw&s",
                 content: "",
                 author_pic: "https://cdn-icons-png.flaticon.com/512/1134/1134769.png",
                 created_time: "13.08.2018"
